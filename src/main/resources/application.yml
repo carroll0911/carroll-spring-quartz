@@ -1,0 +1,19 @@
+carroll:
+  quartz:
+    schedulerInstanceName: MyselfScheduler
+    schedulerInstanceId: NON_CLUSTERED # 使用集群：AUTO 不使用集群：NON_CLUSTERED
+    schedulerSkipUpdateCheck: true
+    schedulerJobFactoryClass: org.quartz.simpl.SimpleJobFactory
+    jobStoreClass: org.quartz.impl.jdbcjobstore.JobStoreTX
+    jobStoreDriverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+    jobStoreDatasource: quartzDataSource
+    jobStoreTablePrefix: QRTZ_
+    jobStoreIsClustered: true
+    threadPoolClass: org.quartz.simpl.SimpleThreadPool
+    threadPoolThreadCount: 5
+    dataSourceDriver: ${spring.datasource.druid.driver-class-name}
+    dataSourceUrl: ${spring.datasource.druid.url}
+    dataSourceUser: ${spring.datasource.druid.username}
+    dataSourcePassword: ${spring.datasource.druid.password}
+    dataSourceMaxConnections: 5
+    dataSourceConnectionProviderClass: com.lingdu.welend.config.quartz.DruidConnectionProvider
