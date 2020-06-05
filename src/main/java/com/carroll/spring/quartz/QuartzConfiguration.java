@@ -43,7 +43,9 @@ public class QuartzConfiguration {
         prop.put("org.quartz.jobStore.isClustered", quartzConfig.getJobStoreIsClustered());
         prop.put("org.quartz.threadPool.class", quartzConfig.getThreadPoolClass());
         prop.put("org.quartz.threadPool.threadCount", quartzConfig.getThreadPoolThreadCount());
-        prop.put("org.quartz.dataSource.quartzDataSource.connectionProvider.class", quartzConfig.getDataSourceConnectionProviderClass());
+        if(quartzConfig.getDataSourceConnectionProviderClass()!=null){
+            prop.put("org.quartz.dataSource.quartzDataSource.connectionProvider.class", quartzConfig.getDataSourceConnectionProviderClass());
+        }
         prop.put("org.quartz.dataSource.quartzDataSource.driver", quartzConfig.getDataSourceDriver());
         prop.put("org.quartz.dataSource.quartzDataSource.URL", quartzConfig.getDataSourceUrl());
         prop.put("org.quartz.dataSource.quartzDataSource.user", quartzConfig.getDataSourceUser());

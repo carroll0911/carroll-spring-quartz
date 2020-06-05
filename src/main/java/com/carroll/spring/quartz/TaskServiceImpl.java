@@ -2,6 +2,7 @@ package com.carroll.spring.quartz;
 
 import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,6 +12,7 @@ import java.util.HashSet;
  * @author: carroll.he
  * @date 2020/5/19
  */
+@Component
 public class TaskServiceImpl implements ITaskService {
 
     @Autowired

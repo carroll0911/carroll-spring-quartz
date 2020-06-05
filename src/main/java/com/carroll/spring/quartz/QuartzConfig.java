@@ -1,5 +1,6 @@
 package com.carroll.spring.quartz;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -29,6 +30,8 @@ public class QuartzConfig {
     private String dataSourcePassword;
     private String dataSourceMaxConnections;
     private String dataSourceConnectionProviderClass;
+    @Autowired
+    private QuartzJobFactory factory;
 
     public String getSchedulerInstanceName() {
         return schedulerInstanceName;
